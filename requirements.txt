@@ -1,0 +1,28 @@
+pymupdf4llm # this is for pdf parsing and text extraction and convert into markdown
+
+langchain-core
+langchain-experimental
+python-dotenv
+langchain-huggingface
+
+sentence-transformers
+qdrant-client
+
+langchain-ollama
+
+psycopg2-binary 
+sqlalchemy
+
+
+# uv add 
+fastapi 
+uvicorn 
+python-multipart 
+jinja2
+
+
+langchain
+
+psycopg2
+
+# python-multipart

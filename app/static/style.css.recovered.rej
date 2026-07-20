@@ -1,0 +1,123 @@
+--- style.css.recovered
++++ style.css
+@@ -1308,110 +1308,15 @@
+     height: 20px;
+-    color: var(--accent-purple);
++    writing-mode: horizontal-tb;
+ }
+ 
+ .chat-collapsed-tab span {
+-    writing-mode: vertical-rl;
+-    text-orientation: mixed;
+-    font-size: 12px;
+-    font-weight: 600;
+-    letter-spacing: 1px;
+-    transform: rotate(180deg);
+-}
+-
+-/* Toasts */
+-.toast-container {
+-    position: fixed;
+-    bottom: 24px;
+-    left: 24px;
+-    display: flex;
+-    flex-direction: column;
+-    gap: 12px;
+-    z-index: 1000;
+-}
+-
+-.toast {
+-    background: var(--bg-panel);
+-    border-left: 4px solid var(--accent-blue);
+-    padding: 16px;
+-    border-radius: var(--radius-sm);
+-    box-shadow: var(--shadow-lg);
+-    display: flex;
+-    align-items: flex-start;
+-    gap: 12px;
+-    min-width: 300px;
+-    transform: translateX(-120%);
+-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+-}
+-
+-.toast.show {
+-    transform: translateX(0);
+-}
+-
+-.toast-success { border-left-color: var(--accent-green); }
+-.toast-error { border-left-color: var(--accent-red); }
+-
+-.toast-icon {
+-    margin-top: 2px;
+-}
+-
+-.toast-success .toast-icon { color: var(--accent-green); }
+-.toast-error .toast-icon { color: var(--accent-red); }
+-
+-.toast-icon svg {
+-    width: 20px;
+-    height: 20px;
+-}
+-
+-.toast-content {
+-    flex: 1;
+-}
+-
+-.toast-title {
+-    font-weight: 600;
+-    font-size: 14px;
+-    margin-bottom: 4px;
+-}
+-
+-.toast-message {
+-    font-size: 13px;
+-    color: var(--text-secondary);
+-}
+-
+-.toast-close {
+-    color: var(--text-muted);
+-    cursor: pointer;
+-    padding: 4px;
+-}
+-
+-.toast-close:hover {
+-    color: var(--text-primary);
+-}
+-
+-.toast-close svg {
+-    width: 16px;
+-    height: 16px;
+-}
+-
+-/* Responsive */
+-@media (max-width: 1200px) {
+-    .dashboard-wrapper {
+-        grid-template-columns: 240px 1fr;
+-    }
+-    .chat-panel {
+-        position: fixed;
+-        right: 0;
+-        top: 0;
+-        bottom: 0;
+-        width: 340px;
+-        z-index: 100;
+-        transform: translateX(100%);
+-    }
+-    .dashboard-wrapper:not(.chat-collapsed) .chat-panel {
+-        transform: translateX(0);
+-        box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+-    }
+-    .dashboard-wrapper.chat-collapsed {
+-        grid-template-columns: 240px 1fr;
+-    }
+-}
++    font-size: 12px;
++    font-weight: 700;
++    letter-spacing: 0.5px;
++}
++
++.chat-collapsed-tab:hover {
++    padding-right: 14px;
++    box-shadow: -4px 0 20px rgba(14, 165, 233, 0.4);
++}
+ 
