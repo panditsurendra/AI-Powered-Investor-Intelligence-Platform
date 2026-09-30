@@ -218,3 +218,18 @@ The extraction layer uses structured **Pydantic schemas** to extract and normali
 ## 📄 License
 
 Distributed under the **MIT License**. See the `LICENSE` file for more information.
+
+-------------------
+🎯 What is this project doing?
+This project is an AI-Powered Investor Intelligence Platform. Financial reports (like annual 10-K filings) are dense and unstructured. This platform automatically ingests these PDFs, breaks them down intelligently, uses an LLM (Large Language Model) to extract critical structured financial metrics (like Revenue, Net Income, Total Assets, Risk Factors), stores them, and displays them on a dashboard.
+
+It solves the problem of manual data entry and analysis in finance by automating the extraction of key performance indicators (KPIs) via a Retrieval-Augmented Generation (RAG) pipeline.
+
+🔄 The End-to-End Workflow
+Ingestion & Parsing: The user uploads a financial PDF document. The system converts this PDF into Markdown to preserve its structure (tables, headers).
+Semantic Chunking: The Markdown text is intelligently sliced into smaller "chunks" so they can be processed efficiently.
+Embedding Generation: Each text chunk is converted into a numerical vector using a local embedding model (BAAI/bge-large-en).
+Vector Storage: These vectors are uploaded to Qdrant (a high-performance vector database), allowing the system to perform "semantic searches" based on meaning rather than exact keywords.
+Retrieval & Extraction (RAG): When metrics are needed, the system queries Qdrant for relevant chunks (e.g., searching for "net income"). It feeds these chunks to a powerful LLM (Qwen/Qwen2.5-72B-Instruct via HuggingFace) forced to output data in a strict structured format using Pydantic.
+Database Persistence: The neatly extracted KPIs are saved into a PostgreSQL relational database for long-term tracking.
+Presentation: A FastAPI backend serves this data to a frontend web dashboard where investors can view the metrics.
